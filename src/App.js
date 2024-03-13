@@ -4,6 +4,7 @@ import './App.css';
 function App() {
   var [steps, setSteps] = useState(0);
   const [open, setOpen] = useState(false);
+  let audio = new Audio("/pop.mp3")
 
   useEffect(() => {
     loadGame();
@@ -48,6 +49,7 @@ function App() {
 
   //Function to spread virus on click
   function spread(r, c) {
+    audio.play();
     setSteps(steps + 1);
 
     toggleClass(r, c);
@@ -71,11 +73,10 @@ function App() {
   }
 
 
-
   return (
     <div className="App">
-      
-      
+     
+
       <div className='navbar'>
         <div className = 'navbar-header'>
           <img className='logo' src='logo.png' alt="Logo" />
